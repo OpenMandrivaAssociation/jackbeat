@@ -1,6 +1,6 @@
 %define name 	jackbeat
 %define version 0.6.1
-%define release %mkrel 1
+%define release %mkrel 2
 
 Summary: 	Drum machine styled audio sequencer
 Name: 		%name
@@ -41,19 +41,6 @@ rm -rf $RPM_BUILD_ROOT
 %makeinstall
 
 #menu
-(cd $RPM_BUILD_ROOT
-mkdir -p ./%{_menudir}
-cat > ./%{_menudir}/%{name} <<EOF
-?package(%{name}):\
-command="%{_bindir}/%{name}"\
-title="JackBeat"\
-longtitle="Drum machine styled audio sequencer"\
-needs="x11"\
-icon="sound_section.png"\
-section="Multimedia/Sound"\
-xdg="true"
-EOF
-)
 
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
 cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-%{name}.desktop << EOF
@@ -64,7 +51,7 @@ Exec=%{_bindir}/%{name}
 Icon=sound_section
 Terminal=false
 Type=Application
-Categories=X-MandrivaLinux-Multimedia-Sound;AudioVideo;Sequencer;
+Categories=AudioVideo;Sequencer;
 EOF
 
 
@@ -81,7 +68,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root)
 %doc AUTHORS ChangeLog COPYING README 
 %_bindir/%name
-%_menudir/%name
 %{_datadir}/applications/mandriva-%{name}.desktop
 
 
