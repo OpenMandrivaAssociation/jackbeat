@@ -11,7 +11,6 @@ License: 	GPL
 Group: 		Sound
 Source: 	http://www.xung.org/jackbeat/files/%{name}-%{version}.tar.bz2
 
-Buildroot: 	%_tmppath/%name-%version-buildroot
 BuildRequires:	ImageMagick 
 BuildRequires:  jackit-devel 
 BuildRequires:  gtk+2-devel 
