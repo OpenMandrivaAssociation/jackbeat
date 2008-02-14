@@ -9,6 +9,7 @@ Release: 	%release
 Url: 		http://www.xung.org/jackbeat/
 License: 	GPL
 Group: 		Sound
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Source: 	http://www.xung.org/jackbeat/files/%{name}-%{version}.tar.bz2
 
 BuildRequires:	ImageMagick 
