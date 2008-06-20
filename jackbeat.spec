@@ -1,16 +1,16 @@
 %define name 	jackbeat
-%define version 0.6.1
-%define release %mkrel 2
+%define version 0.6.3
+%define release %mkrel 1
 
 Summary: 	Drum machine styled audio sequencer
 Name: 		%name
 Version: 	%version
 Release: 	%release
-Url: 		http://www.xung.org/jackbeat/
+Url: 		http://jackbeat.samalyse.org/
 License: 	GPL
 Group: 		Sound
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-Source: 	http://www.xung.org/jackbeat/files/%{name}-%{version}.tar.bz2
+Source: 	http://jackbeat.samalyse.org/downloads/jackbeat-0.6.3.tar.gz
 
 BuildRequires:	ImageMagick 
 BuildRequires:  jackit-devel 
