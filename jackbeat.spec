@@ -12,7 +12,7 @@ Group: 		Sound
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Source: 	http://jackbeat.samalyse.org/downloads/jackbeat-0.6.3.tar.gz
 
-BuildRequires:	ImageMagick 
+BuildRequires:	imagemagick 
 BuildRequires:  jackit-devel 
 BuildRequires:  gtk+2-devel 
 BuildRequires:  libsndfile-devel
