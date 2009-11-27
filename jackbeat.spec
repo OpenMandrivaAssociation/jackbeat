@@ -1,22 +1,25 @@
 %define name 	jackbeat
-%define version 0.6.3
-%define release %mkrel 2
+%define version 0.7.3
+%define release %mkrel 1
 
 Summary: 	Drum machine styled audio sequencer
 Name: 		%name
 Version: 	%version
 Release: 	%release
 Url: 		http://jackbeat.samalyse.org/
-License: 	GPL
+License: 	GPLv2+
 Group: 		Sound
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-Source: 	http://jackbeat.samalyse.org/downloads/jackbeat-0.6.3.tar.gz
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
+Source: 	http://jackbeat.samalyse.org/downloads/%{name}-%{version}.tar.gz
+Patch0:		jackbeat-0.7.3-mdv-fix-str-fmt.patch
 
 BuildRequires:	imagemagick 
 BuildRequires:  jackit-devel 
 BuildRequires:  gtk+2-devel 
 BuildRequires:  libsndfile-devel
 BuildRequires:  libsamplerate-devel
+BuildRequires:	portaudio-devel
+BuildRequires:	liblo-devel
 
 %description
 Jackbeat is an audio sequencer with the following features :
@@ -31,19 +34,20 @@ Jackbeat is an audio sequencer with the following features :
 
 %prep
 %setup -q
+%patch0 -p1 -b .strfmt
 
 %build
-%configure2_5x
+%configure
 %make
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 %makeinstall
 
 #menu
 
-mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
-cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-%{name}.desktop << EOF
+mkdir -p %{buildroot}%{_datadir}/applications
+cat > %{buildroot}%{_datadir}/applications/mandriva-%{name}.desktop << EOF
 [Desktop Entry]
 Name=JackBeat
 Comment=%{summary}
@@ -66,12 +70,12 @@ EOF
 %endif
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
 %doc AUTHORS ChangeLog COPYING README 
-%_bindir/%name
+%{_bindir}/%{name}
 %{_datadir}/applications/mandriva-%{name}.desktop
-
+%{_datadir}/%{name}
 
