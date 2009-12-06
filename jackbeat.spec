@@ -1,5 +1,5 @@
 %define name 	jackbeat
-%define version 0.7.3
+%define version 0.7.4
 %define release %mkrel 1
 
 Summary: 	Drum machine styled audio sequencer
