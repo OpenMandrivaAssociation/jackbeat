@@ -1,6 +1,6 @@
 %define name 	jackbeat
-%define version 0.7.5
-%define release %mkrel 2
+%define version 0.7.6
+%define release %mkrel 1
 
 Summary: 	Drum machine styled audio sequencer
 Name: 		%name
@@ -19,6 +19,7 @@ BuildRequires:  gtk+2-devel
 BuildRequires:  libsndfile-devel
 BuildRequires:  libsamplerate-devel
 BuildRequires:	portaudio-devel
+BuildRequires:  pulseaudio-devel
 BuildRequires:	liblo-devel
 
 %description
