@@ -1,0 +1,12 @@
+diff -p -up jackbeat-0.7.3/src/gui.c.strfmt jackbeat-0.7.3/src/gui.c
+--- jackbeat-0.7.3/src/gui.c.strfmt	2009-11-27 15:04:50.000000000 +0100
++++ jackbeat-0.7.3/src/gui.c	2009-11-27 15:09:19.000000000 +0100
+@@ -597,7 +597,7 @@ gui_confirm_exit (gui_t *gui, int transi
+         gtk_window_set_position (GTK_WINDOW (dialog), GTK_WIN_POS_CENTER);
+     }
+ 
+-    gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog), msg);
++    gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog), "%s", msg);
+     confirm = (gtk_dialog_run (GTK_DIALOG (dialog)) == GTK_RESPONSE_OK);
+     gtk_widget_hide (dialog);
+     return confirm;
