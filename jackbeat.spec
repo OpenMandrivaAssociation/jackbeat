@@ -1,7 +1,7 @@
 Summary:		Drum machine styled audio sequencer
 Name:		jackbeat
 Version:		0.7.6
-Release:		2
+Release:		3
 Url:		http://bitbucket.org/olivierg/jackbeat/wiki/Home
 License:		GPLv2+
 Group:		Sound
